@@ -67,6 +67,10 @@ plot_polygon(polygon, dpi=150, margin=0.1)
 plot_polygons_transition(polygon1, polygon2)
 ```
 
+![Правильный многоугольник](image/Rhomb.png)
+![Неправильный многоугольник](image/Pentagon.png)
+![Преобразование](image/Transformation.png)
+
 ## Авторы
 
 - [Лёха](https://github.com/LyoshaGodX)
