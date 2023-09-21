@@ -21,7 +21,7 @@ def main_menu():
 
 
 def create_polygon_menu():
-    polygon = None  # Инициализируем переменную для хранения многоугольника
+    polygon = None  # Переменная для хранения многоугольника
     transformations = []  # Хранение истории преобразований
     while True:
         print("\nМеню создания многоугольника:")
@@ -36,7 +36,7 @@ def create_polygon_menu():
             transformations = []  # Сбрасываем историю преобразований при создании нового многоугольника
         elif choice == "2":
             polygon = create_irregular_polygon()
-            transformations = []  # Сбрасываем историю преобразований при создании нового многоугольника
+            transformations = []
         elif choice == "3":
             break
         elif choice == "4":
@@ -74,7 +74,7 @@ def create_regular_polygon():
             choice = input("Выберите опцию: ")
 
             if choice == "1":
-                continue  # Создать новый с теми же параметрами
+                continue  # Создать новый многоугольник с теми же параметрами
             elif choice == "2":
                 transform_polygon(polygon, [])  # Перейти к преобразованиям
             elif choice == "3":
@@ -82,10 +82,11 @@ def create_regular_polygon():
             elif choice == "4":
                 exit()  # Выйти из программы
             else:
-                print("Неверный выбор. Попробуйте снова.")
+                print("Неверный выбор. Попробуйте снова")
 
         except ValueError as e:
             print(e)
+
 
 def create_irregular_polygon():
     num_vertices = None
@@ -94,7 +95,7 @@ def create_irregular_polygon():
     while True:
         if num_vertices is None or radius is None:
             num_vertices = int(input("Введите количество вершин: "))
-            radius = float(input("Введите радиус окружности: "))
+            radius = float(input("Введите радиус окружности, описывающей многоугольник: "))
 
         try:
             polygon = generate_irregular_polygon(num_vertices, radius)
@@ -104,7 +105,6 @@ def create_irregular_polygon():
 
             plot_polygon(polygon)
 
-            # После создания многоугольника предложите опции
             print("\n1. Создать новый прямоугольник с текущими параметрами.")
             print("2. Перейти к преобразованиям.")
             print("3. Вернуться в меню создания многоугольника.")
@@ -112,7 +112,7 @@ def create_irregular_polygon():
             choice = input("Выберите опцию: ")
 
             if choice == "1":
-                continue  # Создать новый с теми же параметрами
+                continue  # Создать новый многоугольник с теми же параметрами
             elif choice == "2":
                 transform_polygon(polygon, [])  # Перейти к преобразованиям
             elif choice == "3":
@@ -131,7 +131,7 @@ def transform_polygon(polygon, transformations):
         print("\nМеню преобразования многоугольника:")
         print("1. Масштабирование.")
         print("2. Перемещение.")
-        print("3. Вращение.")
+        print("3. Вращение относительно начала координат.")
         if transformations:
             print("4. Вернуться к предыдущему преобразованию.")
         print("5. Вернуться к созданию многоугольника.")
@@ -154,7 +154,7 @@ def transform_polygon(polygon, transformations):
             plot_polygons_transition(polygon, previous_state)
             polygon = previous_state
         elif choice == "5":
-            return polygon  # Возвращаемся к созданию многоугольника
+            return polygon  # Вернуться к пеню создания
         elif choice == "6":
             return
         elif choice == "7":
@@ -174,7 +174,7 @@ def scale_polygon(polygon, transformations):
         print(row)
 
     plot_polygons_transition(polygon, scaled_polygon)
-    return scaled_polygon  # Возвращаем масштабированный многоугольник
+    return scaled_polygon
 
 
 def translate_polygon_menu(polygon, transformations):
@@ -188,7 +188,7 @@ def translate_polygon_menu(polygon, transformations):
         print(row)
 
     plot_polygons_transition(polygon, translated_polygon)
-    return translated_polygon  # Возвращаем смещенный многоугольник
+    return translated_polygon
 
 
 def rotate_polygon_menu(polygon, transformations):
@@ -202,4 +202,4 @@ def rotate_polygon_menu(polygon, transformations):
         print(row)
 
     plot_polygons_transition(polygon, rotated_polygon)
-    return rotated_polygon  # Возвращаем повернутый многоугольник
+    return rotated_polygon
