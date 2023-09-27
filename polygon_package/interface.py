@@ -1,8 +1,8 @@
 import copy
 
-from polygon_package.generation import generate_regular_polygon, generate_irregular_polygon
-from polygon_package.transformation import scaling_polygon, translate_polygon, rotate_polygon
-from polygon_package.visualization import plot_polygon, plot_polygons_transition
+from .generation import generate_regular_polygon, generate_irregular_polygon
+from .transformation import scaling_polygon, translate_polygon, rotate_polygon
+from .visualization import plot_polygon, plot_polygons_transition
 
 
 def main_menu():
