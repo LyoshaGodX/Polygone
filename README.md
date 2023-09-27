@@ -7,7 +7,13 @@
 Для установки пакета, выполните следующую команду:
 
 ```bash
-py -m pip install --index-url https://test.pypi.org/simple/ --no-deps polygon-package-LyoshaGodX
+pip install --index-url https://test.pypi.org/simple/ --no-deps polygon-package
+```
+
+Для установки зависимостей, выполните следующую команду:
+
+```bash
+pip install matplotlib
 ```
 
 ## Использование
