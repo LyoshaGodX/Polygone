@@ -7,7 +7,7 @@
 Для установки пакета, выполните следующую команду:
 
 ```bash
-НЕ ЗАБЫТЬ ДОПИЛИТЬ
+py -m pip install --index-url https://test.pypi.org/simple/ --no-deps polygon-package-LyoshaGodX
 ```
 
 ## Использование
@@ -66,6 +66,10 @@ plot_polygon(polygon, dpi=150, margin=0.1)
 # Визуализация перехода между двумя многоугольниками
 plot_polygons_transition(polygon1, polygon2)
 ```
+
+![Правильный многоугольник](image/Rhomb.png)
+![Неправильный многоугольник](image/Pentagon.png)
+![Преобразование](image/Transformation.png)
 
 ## Авторы
 
