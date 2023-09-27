@@ -7,7 +7,7 @@
 Для установки пакета, выполните следующую команду:
 
 ```bash
-НЕ ЗАБЫТЬ ДОПИЛИТЬ
+py -m pip install --index-url https://test.pypi.org/simple/ --no-deps polygon-package-LyoshaGodX
 ```
 
 ## Использование
